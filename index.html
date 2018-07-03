@@ -39,7 +39,7 @@
 	</nav>
 	<!-- END Nav -->
 
-	<div class="min-h-screen">	
+	<div class="min-h-screen"  id="main">	
 
 		<!-- Buttons -->
 		<div class="section flex">
@@ -157,10 +157,20 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<script type="text/javascript">
-		if ($(window).width() < 992) {
+		
+		// Função que checa se existe scrollbar na tela
+		(function($) {
+		    $.fn.hasScrollBar = function() {
+		        return this.get(0).scrollHeight > this.height();
+		    }
+		})(jQuery);
+
+		// Esconde menu // Bug navegador 975 px 
+		if ((!$("#main").hasScrollBar() && $(document).width() < 992) || ($("#main").hasScrollBar() && $(document).width() < 974)) {
 			$("#menu").hide();
 		}
-		//  e ativa botão hamburguer
+
+		// Ativa botão hamburguer
 		$(document).ready(function(){
 		    $("#app").click(function(){
 		        $("#menu").slideToggle();
@@ -169,12 +179,13 @@
 
 		// Resize esconde ou mostra menu dependendo do tamanho da tela
 		$(window).resize(function() {
-			if ($(window).width() > 991) {
+			if (($(document).width() > 991) || ($("#main").hasScrollBar() && $(document).width() > 974)) {
 				$("#menu").show();
 			} else{
 				$("#menu").hide();
 			}
 		});
+
 	</script>
 	<!-- END Scripts -->
     
