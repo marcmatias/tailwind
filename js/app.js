@@ -9,7 +9,7 @@
 	}
 
 	// Esconde menu // Bug navegador 975 px 
-	if ((isMobile && $(document).width() < 992) || (!isMobile && $(document).width() < 974)) {
+	if ((isMobile && $(document).width() < 992) || (!isMobile && $(document).width() < 975)) {
 		$("#menu").hide();
 	}
 
@@ -22,7 +22,7 @@
 
 	// Resize esconde ou mostra menu dependendo do tamanho da tela
 	$(window).resize(function() {
-		if ((isMobile && $(document).width() > 991) || (!isMobile && $(document).width() > 974)) {
+		if ((isMobile && $(document).width() > 992) || (!isMobile && $(document).width() > 974)) {
 			$("#menu").show();
 		} else{
 			$("#menu").hide();
