@@ -10,4 +10,4 @@ https://scotch.io/@paschaldev/introducing-tailwindcss
 
 ## Carregar novas classes criadas no style.css na main css:
 
-.\node_modules\.bin\tailwind build styles.css -o output.css
+.\node_modules\.bin\tailwind build css\styles.css -o css\output.css
